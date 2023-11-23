@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Memory Games</title>
+</head>
+<body>
+    <section id="start-select">
+        <div>
+         <div>
+          <h3>Go First or Second?</h3>
+          <button id="1st" class="active" onclick="pickTurn(true);" style='font-size: 14px;'>1st</button><button id="2nd" onclick="pickTurn(false);" style='font-size: 14px;'>2nd</button>
+          <h3>Choose Your Character</h3>
+          <span id="charSymbols"></span>
+       
+         <button id ="start-btn" onclick="startGame();" style='font-size: 18px;'>Start Game</button>
+         </div>
+        </div>
+       </section>
+       
+       <header id="header" style="opacity:0.6;">  
+         <div id="emoji-outer-div">
+           <div id="emoji">
+            <img src="asset/win02.png" id="emoji-img">
+           </div>
+           <div id="emoji-text">
+            <span id="aiTalk">"Hi, I'm Smart Botzz<br>Wanna Play Against Me?"</span>
+           </div>
+         </div>
+       </header>
+       
+         <nav id="menu-nav">
+        <div>
+         <div>
+          <h3>Next Round Go First or Second?</h3>
+          <button id="1st-next" class="active" onclick="pickTurn(true);">1st</button><button id="2nd-next" onclick="pickTurn(false);">2nd</button>
+          <h3>Change Your Character</h3>
+          <span id="menu-chars"></span>
+       
+         <button id ="menu-close" onclick="openMenu(false);" style="width: 100px;">Close</button>
+         </div>
+        </div>
+       </nav>
+       
+       <section id='main-section' style="opacity:0.6;">
+         <section id="side-section">
+          
+         <a id="menu-open" href="javascript:void(0);" onclick="openMenu(true);"><div>☰</div></a>
+          
+         <div id="score">
+          <div><span>Score</span></div>
+           <div><table>
+            <tr>
+              <th>You</th>
+             <th style="width: 12px;"></th>
+              <th>Ai</th>
+            </tr>
+            <tr>
+              <td>0</td>
+             <td> </td>
+              <td id="score-ai">0</td>
+            </tr> 
+            </table></div>
+          <div style="height: 10px; width:0;"></div>
+         <div><table>
+           <tr>
+             <th>Tie</th>
+           </tr>
+           <tr>
+             <td id="score-tie">0</td>
+           </tr>
+         </table></div>
+          
+       </div>
+          
+        </section>
+       
+        <div id="outer-grid">
+         
+       <section id="grid"> 
+        <div id="pos0"><a href="javascript:void(0);" onclick='playerMove(0);' class="pos"></a></div>
+        <div id="pos1"><a href="javascript:void(0);" onclick='playerMove(1);' class="pos"></a></div>
+        <div id="pos2"><a href="javascript:void(0);" onclick='playerMove(2);' class="pos"></a></div>
+        <div id="pos3"><a href="javascript:void(0);" onclick='playerMove(3);' class="pos"></a></div>
+        <div id="pos4"><a href="javascript:void(0);" onclick='playerMove(4);' class="pos"></a></div>
+        <div id="pos5"><a href="javascript:void(0);" onclick='playerMove(5);' class="pos"></a></div>
+        <div id="pos6"><a href="javascript:void(0);" onclick='playerMove(6);' class="pos"></a></div>
+        <div id="pos7"><a href="javascript:void(0);" onclick='playerMove(7);' class="pos"></a></div>
+        <div id="pos8"><a href="javascript:void(0);" onclick='playerMove(8);' class="pos"></a></div>
+       </section>
+        </div>
+       </section>
+       
+       <footer>
+        <p>By <a href="#" target="_blank">Rama Gansz<img src="asset/fire.png" style="width: 16px"></a></p>
+       <p>Emojis from EmojiOne By Rama</p>
+<script src="script.js"></script>
+    </body>
+ </html>
