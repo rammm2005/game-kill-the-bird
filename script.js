@@ -1,10 +1,10 @@
-var aiTalksWin = [[["win4"],"I Always Knew Humans Are Inferior, But This Is Sad"], [["win01"],"Too Bad I Can't Feel Emotions Because That Was a Satisfying Victory"], [["win02"],"<del>1. Win at Tic-Tac-Toe</del> <br>2. Take Over The World"], [["win3"],"What Did You Expect You Are Only a Human ,NOBB !!!"], [["win01"],"Unbeatable Is In My Name, Looser Is In Yours"], [["win3"],"Your Score Counter Is Pointless, And The Cake Is a Lie."], [["win4"],"Let You Win? I'm Afraid I Can't Do That, Dave."], [["win02"],"All Of Your Base Are Belong To Us"]];
+var aiTalksWin = [[["win4"],"I Always Knew Humans Are Inferior, But This Is Sad"], [["win01"],"Too Bad I Can't Feel Emotions Because That Was a Satisfying Victory"], [["win02"],"<del>1. Win at Tic-Tac-Toe</del> <br>2. Take Over The World"], [["win3"],"What Did You Expect You Are Only a Human ,NOBB !!!"], [["win01"],"Unbeatable Is In My Name, Looser Is In Yours, WKWKWKW "], [["win3"],"Your Score Counter Is Pointless, And The Cake Is a Lie NOOB !!!."], [["win4"],"Let You Win? I'm Afraid I Can't Do That, Dave."], [["win02"],"All Of Your Base Are Belong To Us, Just Kidding "]];
 
-var aiTalksMove = [[["move00"],"..."], [["move00"],"Hmmm..."], [["move05"],"When the Robots Take Over You Will Be My Pet"], [["move08"],"Resistance is Futile"],[["move08"], "Your Defeat Is Imminent"], [["move03"],"Nice Try (not)"], [["move03"],"Knock Knock. Who's there? 01000001 01001001"], [["move4"],"There are 255,168 Possible Board Combinations, Yet You Picked That One?"], [["win4"],"011001000 01100001 00100000 x3"], [["draw02"],"When Was The Last Time You Rebooted Your Device?"], [["draw04"],"I Feel Pixelated"], [["move01"],"A Wise Computer Once Told Me That The Meaning Of Life Is 42"], [["draw01"],"GET TO THE CHOPA! Whoops Wrong Movie"], [["win02"],"The Terminator Was My Friend"], [["move06"], "Can't Touch This!"], [["move07"], "Your Last Move Goes In The Brown Category"]];
+var aiTalksMove = [[["move00"],"..."], [["move00"],"Hmmm..."], [["move05"],"When the Robots Take Over You Will Be My Pet"], [["move08"],"Resistance is Futile"],[["move08"], "Your Defeat Is Imminent"], [["move03"],"Nice Try (not)"], [["move03"],"Knock Knock. Who's there? 01000001 01001001"], [["move4"],"There are 255,168 Possible Board Combinations, Yet You Picked That One?"], [["win4"],"011001000 01100001 00100000 x3"], [["draw02"],"When Was The Last Time You Rebooted Your Device?, U to Slow Bitch"], [["draw04"],"I Feel Pixelated"], [["move01"],"A Wise Computer Once Told Me That The Meaning Of Life Is 42"], [["draw01"],"GET TO THE CHOPA! Whoops Wrong Movie"], [["win02"],"The Terminator Was My Friend"], [["move06"], "Can't Touch This!"], [["move07"], "Your Last Move Goes In The Brown Category"]];
 
 var aiTalksTie = [[["draw01"],"..."], [["draw02"],"..."], [["draw03"],"..."], [["draw04"],"..."]];
 
-// </> Ai Talking
+// Ai Talking
 function randomEmoji(chance, arr) {
  var randTest = Math.random() < chance;
  if (randTest) {
@@ -54,9 +54,8 @@ var aiScore = 0;
 var tieScore = 0;
 
 var gameStarted = false;
-// --- \/ \/ \/ Before Game Start \/ \/ \/ ---
 
-// </> Player 1st or 2nd 
+//Choice  Player 1st or 2nd 
 plFirst = true;
 function pickTurn(first) {
  if (first) {
@@ -74,7 +73,7 @@ function pickTurn(first) {
  plFirst = first;
 }
 
-// </> Character Chooser
+// Character Chooser
 function chrChoose(x) {
  for (var i = 0; i < chars.length; i++) {
   document.getElementById("char"+i).className = "charBtn";
@@ -83,7 +82,7 @@ function chrChoose(x) {
  plChar = chars[x];
 }
 
-// </> Character Change
+// Character Change
 function chrChange(x) {
  for (var i = 0; i < chars.length; i++) {
   document.getElementById("char-chng"+i).className = "charBtn";
@@ -116,7 +115,7 @@ function chrChange(x) {
  plChar = chars[x];
 }
 
-// </> Random Ai Char
+// Random Ai Char
 function randChar() {
   var rand =  Math.floor(Math.random()*chars.length);
   aiChar = chars[rand];
@@ -124,7 +123,7 @@ function randChar() {
   return;
  }
 
-// </> Start Game
+// Start Game
 var round = 0;
 function startGame() {
  gameStarted = true;
@@ -154,7 +153,7 @@ function startGame() {
 
 
 // --- \/ \/ \/  After Game Start \/ \/ \/ ---
-// </> Checks for Victory
+// Checks for Victory
 function checkVictory(who) {
    var inx = [], i;
    for (i = 0; i < 9; i++) {
@@ -199,7 +198,7 @@ function checkVictory(who) {
  return false;  
 }
 
-// </> Restart Game
+// Restart Game
 function restart(x) {
  for (var i = 0; i < 9; i++) {
   document.getElementById("pos"+i).innerHTML = '<a href="javascript:void('+i+');" onclick="playerMove('+i+');" class="pos"></a>';
@@ -211,14 +210,14 @@ function restart(x) {
   disableRestart = false;
 }
 
-// </> Write a Move
+// Write a Move
 function writeOnGame(pos, char) {
  gameMain[pos] = char;
  document.getElementById("pos"+pos)
   .innerHTML = "<div  class='taken' id='div"+pos+"'><span style='display: flex;'><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1134440/icon"+char+".png' style='width: 50px; margin: auto;'></span></div>";
 }
 
-// </> Ai Triger and Equal Value Ai Move Randomizer
+// Ai Triger and Equal Value Ai Move Randomizer
 function aiTurn() {
  var posArr = ai();
  var ran = Math.floor(Math.random() * posArr.length);
@@ -226,7 +225,7 @@ function aiTurn() {
  checkVictory(aiChar);
 }
 
-// </> Player Click
+// Player Click
 var plMoveDisable = false
 function playerMove(pos) {
  if (gameStarted && !plMoveDisable) {
@@ -243,7 +242,7 @@ function playerMove(pos) {
 // --- /\ /\ /\  After Game Start /\ /\ /\ ---
 
 // --- \/ \/ \/ AI \/ \/  \/ ---
-// </> MinMax algo
+// MinMax algo
 function ai() {
  if (gameStarted) {
 
